@@ -1,0 +1,27 @@
+######################################################
+##
+## The static inventory puts the hosts in different groups as described here: https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#hosts-and-groups
+## Variables would be defined directly for each host, including the ansible_user, the login user with sudoers permissions.
+## For authentication, either the password or the SSH Private Key can be used.
+##
+######################################################
+
+[hdp-management]
+management ansible_host=searcher-a.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+
+[hdp-master-1]
+master1 ansible_host=searcher-m1.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+
+[hdp-master-2]
+master2 ansible_host=searcher-m2.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+
+[hdp-master-3]
+master3 ansible_host=searcher-m3.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+
+[hdp-worker]
+data1 ansible_host=searcher-d1.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+data2 ansible_host=searcher-d2.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+data3 ansible_host=searcher-d3.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
+
+[hdp-edge]
+edge ansible_host=searcher-e.field.hortonworks.com ansible_user=centos ansible_ssh_private_key_file="~/.ssh/id_rsa" rack=/default-rack
